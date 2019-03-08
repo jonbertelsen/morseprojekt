@@ -95,7 +95,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . # .
             . . # . .
             `)
-    } else {
+    } else if (receivedNumber == 3) {
         basic.showLeds(`
             # . . . #
             . # . # .
@@ -103,7 +103,33 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # . # .
             # . . . #
             `)
+    } else {
+        basic.showLeds(`
+            . . # . .
+            . . # . .
+            . . # . .
+            . . # . .
+            . . # . .
+            `)
     }
+    basic.pause(100)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+})
+input.onButtonPressed(Button.AB, function () {
+    basic.showLeds(`
+        . . # . .
+        . . # . .
+        . . # . .
+        . . # . .
+        . . # . .
+        `)
+    radio.sendNumber(4)
     basic.pause(100)
     basic.showLeds(`
         . . . . .
